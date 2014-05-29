@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ru">
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<style type="text/css">
+	 
+			fieldset{
+			 display:table-cell;
+			 float:left;
+			
+			}
+
+</style>
+<script type="text/javascript" src="pieChart.js"></script>
+</head>
+<body>
+  
+	<fieldset style='position:relative;width:500px;height:400px;'>
+			<legend>  share pie </legend>
+			<canvas id="p" width="500" height="400"   >Your browser does not support the HTML5 canvas tag.</canvas>
+		</fieldset>
+
+	<fieldset style='position:relative;width:500px;height:400px;'>
+			<legend> salary pie</legend>
+			<canvas id="pp" width="500" height="400"   >Your browser does not support the HTML5 canvas tag.</canvas>
+		</fieldset>
+
+<script>
+
+var config = {
+	id: 'p',
+	type: '%',
+ 
+	data: [
+['刘强东',18.4],['老虎基金',22.1],['HHGL',15.8],['DST',11.2],['BAI',9.5],['Fortune ising',5.3],['Kingdom',5.0],['红杉资本',2.0],
+
+ ]
+};
+
+
+var options={
+	id: 'pp',
+ 
+   total:11000,
+	data: [
+['公积金',1320],['养老保险',880],['医疗保险',440],['个人所得税',417],['可支配收入',7943]
+]
+};
+
+var pp= pie(options);
+    pp.render();
+var p= pie(config);
+    p.render();
+// console.log(p);
+
+</script>
+
+
+</body>
+</html>
