@@ -66,7 +66,9 @@
 				var y = this.container.clientHeight * .5;
 				var radius = (x > y) ? y : x;
 				var ctx = this.container.getContext("2d");
-				var startPoint = 0;
+					ctx.strokeStyle='#fafaea';
+					ctx.lineWidth=2;
+				var startPoint = (Math.PI * 2 )/-4;
 				for (var i = 0; i < this.data.length; i++) {
 					if (null == this.data[i][2]) {
 						this.data[i][2] = this.defaultBgcolor[i % this.defaultBgcolor.length];
@@ -78,6 +80,9 @@
 					ctx.fill();
 					startPoint += Math.PI * 2 * (this.data[i][1] / 100);
 				}
+					ctx.moveTo(x,y);
+			ctx.lineTo(x,y-radius);
+			ctx.stroke();	
 				return true;
 			},
 			renderLabel: function() {
